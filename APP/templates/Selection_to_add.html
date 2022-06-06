@@ -1,0 +1,29 @@
+{% extends "base.html"  %}
+
+{% block head%}
+
+{% endblock %}
+
+
+{% block body%}
+<img class="SA" src="https://venatata.org/wp-content/uploads/WhatsApp-Image-2020-11-27-at-15.00.15-1-1024x576.jpeg" >
+<b class="g2">הוספת פעילויות</b>
+<b class="g3">דף זה מיועד למתנדבים שקיבלו הרשאה להוסיף פעילויות בלבד</b>
+<b class="g4">מעוניינים גם? השאירו מייל ונחזור אליכם</b>
+
+<form class="Email" method="post" action="{{ url_for('Selection_to_add') }}">
+  <input type="text" placeholder="Email" name="Email" id="Email" style="border-radius: 25px;">
+  <button class="b3" type="submit" id="submit" >להרשמה </button>
+</form>
+
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}" class="active"> <img class="nav" src="static\images\add_green.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}

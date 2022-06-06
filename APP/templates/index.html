@@ -1,0 +1,103 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+
+<p id="par" style="color:white;">{{ data }}</p>
+<p id="tags" style="color:white;">{{ tags }}</p>
+
+<script>
+s()
+</script>
+<!--The div element for the map -->
+
+<div id="map"></div>
+<div class="container">
+    <div class="topnav">
+        <a href="{{ url_for('list_page') }}"> רשימה</a>
+        <a href="{{ url_for('index') }}" class="active">מפה</a>
+    </div>
+</div>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzSYpxu4xLSbRzr_JlfQw7-FYkebG-MaY&callback=initMap&libraries=places&v=weekly"
+        async
+></script>
+
+<form class="search">
+
+    <input type="text" placeholder="נחלת בנימין 10,תל אביב" name="search" id="search">
+    <button type="submit" id="submit"></button>
+    <img class="search_loc" src="static\images\loc1.png">
+    <img class="search" src="static\images\search.png">
+</form>
+
+<!--the transparent navbar that swipe-->
+<section class="swipey-bar-wrapper">
+    <div class="swipey-bar-container">
+        <a id="tag" class="swipey-box" onclick='make_marker("red")'>
+            גינה קהילתית
+            <img class="tag" src="static\images\tree.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("green")'>
+            גינה שיקומית
+            <img class="tag" src="static\images\heart.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("blue")'>
+            יער מאכל
+            <img class="tag" src="static\images\strawberry.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("yellow")'>
+            קבוצות וואטסאפ
+            <img class="tag" src="static\images\whatsapp.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("purple")'>
+            החלפת זרעים ויחוריים
+            <img class="tag" src="static\images\flower.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("orange")'>
+            התנדבות
+            <img class="tag" src="static\images\volunteer.png">
+
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("maroon")'>
+            נטיעות
+            <img class="tag" src="static\images\to_plant.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("black")'>
+            חוג בית
+            <img class="tag" src="static\images\home.png">
+        </a><!-- /.swipey-box -->
+        <a class="swipey-box" onclick='make_marker("#F31AB9")'>
+            סיורים והדרכות
+            <img class="tag" src="static\images\tours.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='make_marker("brown")'>
+            קורסים
+            <img class="tag" src="static\images\courses.png">
+        </a><!-- /.swipey-box -->
+
+    </div>
+</section>
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav"
+                                           src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" class="active"> <img class="nav"
+                                                          src="static\images\activity_green.png">פעילויות</a>
+</div>
+{% endblock %}

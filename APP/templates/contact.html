@@ -1,0 +1,20 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+
+<b class="g1">צרו קשר</b>
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}" class="active"> <img class="nav" src="static\images\profile1_green.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}

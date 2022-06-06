@@ -1,0 +1,41 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+
+<form action="{{ url_for('sign_up') }}" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <h1>רישום</h1>
+
+    <input type="text" placeholder="הכנס שם" name="name" required>
+
+    <input type="password" placeholder="הכנס ססמא(מינימום 8 תווים)" name="psw" pattern="(?=.*\d).{8,}" title="צריך להכיל יותר מ8 אותיות ולפחות מספר אחד" required>>
+
+
+    <input type="text" placeholder="מספר טלפון" name="phoneN" pattern="[0-9]+" title="רק מספרים" required>
+
+    <input type="text" placeholder="הכנס גמייל" name="email" required>
+
+    <input type="password"  placeholder="הכנס קוד זיהוי(לא חובה) " name="code" >
+
+    <input type="file" id="pic1" name="pic1" required/>
+
+    <div>
+      <button type="submit" class="b2" >הירשם</button>
+    </div>
+  </div>
+</form>
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}" class="active"> <img class="nav" src="static\images\profile1_green.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet"  href="{{ url_for('static' ,filename='css/main.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static' ,filename='css/add.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static' ,filename='css/login.css')}}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script  src ="{{ url_for('static',filename='js/main.js')}} "></script>
+    <link rel="stylesheet"  href="{{ url_for('static' ,filename='css/Selection_to_add.css')}}">
+ {% block head%}
+
+    {% endblock %}
+</head>
+<body>
+    {% block body%}{% endblock %}
+
+</body>
+</html>

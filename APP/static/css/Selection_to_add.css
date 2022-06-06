@@ -1,0 +1,71 @@
+img.SA{
+position:absolute;
+top:0px;
+width:100%;
+height:30%;
+}
+b.g2{
+position:absolute;
+top:33%;
+right:35%;
+font-size:300%;
+color: green;
+
+}
+
+b.g3{
+position: absolute;
+left: 20%;
+right: 20%;
+top: 38%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 300%;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+b.g4{
+position: absolute;
+left: 20%;
+right: 18%;
+top: 47%;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 100;
+font-size: 240%;
+align-items: center;
+text-align: center;
+}
+
+
+form.Email input[id=Email] {
+  border-radius: 25px;
+  top: 50%;
+  left:10%;
+  font-size: 200%;
+  border: 1px solid grey;
+  width: 80%;
+  background: white;
+  position:absolute;
+
+}
+
+button.b3 {
+  font-size:200%;
+  position: absolute;
+  background-color: #979797;
+  border-radius: 10px;
+  padding: 2.85% 5%;
+  margin: 0% -5%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  right:37%;
+  top: 60%;
+}

@@ -1,0 +1,24 @@
+{% extends "base.html"  %}
+
+{% block head%}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+{% endblock %}
+
+
+{% block body%}
+
+
+<img style="width:100%; height:80%;" src="https://www.garfieldrx.com/Image/Render/712747?unique=1001950&useCdn=True">
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}" class="active"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata_green.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}
+
+

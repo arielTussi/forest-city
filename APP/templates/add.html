@@ -1,0 +1,69 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+
+
+<div class="container1">
+<form action="{{ url_for('add') }} " method="POST" enctype="multipart/form-data" >
+<h1> שם ההתנדבות</h1>
+      <input type="text" id="name" name="name" >
+<h1>תיאור</h1>
+  <textarea id="des" name="des" style="height:200px"></textarea>
+
+<h1>כתובת </h1>
+
+      <input type="text" id="loc" name="loc" >
+
+<h1>תאריך</h1>
+      <input type="text" id="date" name="date" >
+
+<h1>שעה</h1>
+      <input type="text" id="time" name="time" >
+
+  <h1> כמות משתתפים</h1>
+  <input type="number" id="limit" name="limit" min="1" max="50">
+
+<h1>תמונה</h1>
+       <input type="file" id="pic" name="pic" />
+
+<!--    <input type="text" id="pic2" name="pic" >-->
+
+
+
+
+
+<h1>תג</h1>
+      <select id="tag" name="tag">
+        <option  style="font-size:50%">גינה קהילתית</option>
+        <option  style="font-size:50%">גינה שיקומית</option>
+        <option  style="font-size:50%">יער מאכל</option>
+        <option  style="font-size:50%">קבוצות וואטסאפ</option>
+        <option  style="font-size:50%">החלפת זרעים ויחוריים</option>
+        <option  style="font-size:50%">התנדבות</option>
+        <option  style="font-size:50%">נטיעות</option>
+        <option  style="font-size:50%">חוג בית</option>
+        <option  style="font-size:50%">סיורים והדרכות</option>
+        <option  style="font-size:50%">קורסים</option>
+
+
+      </select>
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}" > <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}" class="active"> <img class="nav" src="static\images\add_green.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}

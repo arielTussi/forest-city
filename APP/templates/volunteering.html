@@ -1,0 +1,77 @@
+{% block head%}
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link rel="stylesheet" href="{{ url_for('static' ,filename='css/main.css')}}">
+<link rel="stylesheet" href="{{ url_for('static' ,filename='css/Volunteering.css')}}">
+<script src="{{ url_for('static',filename='js/Volunteering.js')}} "></script>
+
+{% endblock %}
+
+{% block body%}
+
+
+
+<img class="pic" src={{data3}}>
+
+
+<p class="g1">{{data1}}</p>
+
+<p class="g2">על הפעילות </p>
+<p class="g3">{{data2}}</p>
+<hr style="margin:50px;">
+<p class="g4">איפה ומתי נפגשים</p>
+
+    <div class="circle"><span class="font">רחוק</span>
+        <div class="pic_loc"></div>
+    </div>
+    <div class="circle" style="right:35%;"><span id="par" class="font">{{data}}</span>
+        <div class="pic_des"></div>
+    </div>
+    <div class="circle" style="right:55%;"><span class="font">{{data5}}</span>
+        <div class="pic_time"></div>
+    </div>
+    <div class="circle" style="right:75%;"><span class="font">{{data4}}</span>
+        <div class="pic_date"></div>
+    </div>
+
+
+<div id="map1" class="m1"></div>
+
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzSYpxu4xLSbRzr_JlfQw7-FYkebG-MaY&callback=initMap&libraries=places&v=weekly"
+        async
+></script>
+
+<p  style="color:white;">1</p>
+<p  style="color:white;">1</p>
+<p  style="color:white;">1</p>
+<p  style="color:white;">1</p>
+<hr style="margin:50px;">
+
+<p class="g5">כמה משתתפים </p>
+<!--gets data of user-->
+<p id="ud" style="color:white;">{{ data8 }}</p>
+<!--<h5 id="demo"></h5>-->
+
+<div class="number-input">
+  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+  <input class="quantity" min="1" max="5"  name="quantity" value="1" type="number">
+  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+</div>
+
+<!--make user data accessible and prints to screen-->
+<script>
+
+	ud();
+	document.getElementById("demo").innerHTML = ud();
+</script>
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" class="active"> <img class="nav" src="static\images\activity_green.png">פעילויות</a>
+</div>
+{% endblock %}

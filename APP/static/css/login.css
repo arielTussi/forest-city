@@ -1,0 +1,308 @@
+/* in user space to my_activities page */
+
+.my_activities{
+  position:absolute;
+  position:absolute;
+  top:50%;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 300%;
+}
+/* in user space to liked_activities page */
+
+.liked_activities{
+  position:absolute;
+  position:absolute;
+  top:55%;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 300%;
+}
+
+/* in user space to notification page */
+
+.notification{
+  position:absolute;
+  position:absolute;
+  top:70%;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 300%;
+}
+/* in user space to contact page */
+.contactB  {
+  position:absolute;
+  position:absolute;
+  top:75%;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 300%;
+}
+/* in user space to login page */
+.loginB  {
+  position:absolute;
+  top:80%;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 300%;
+
+}
+
+
+
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 10%;
+  height: 4%;
+  top: 70%;
+  left:5%;
+
+}
+
+
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(36px);
+
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+.circle {
+  top:0%;
+  right: 5%;
+  position: absolute;
+  width: 90%;
+  height: 25%;
+  background-color: #EAFFD3;
+  margin: 10px;
+  font-size: 15px;
+  border-radius: 0 0 50% 50%/0 10% 100% 100%;
+
+
+
+}
+/* *//* *//* *//* *//* *//* *//* *//* *//* */
+body {font-family: Open Sans;}
+form {border: 3px solid #f1f1f1;}
+/*text in boxes */
+
+input[type=text], input[type=password] {
+  position:relative;
+  width: 80%;
+  right:10%;
+  border-radius:20px;
+  padding: 3% 5%;
+  margin: 2% 0;
+  font-size:300%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+
+label.c2{
+position:absolute;
+font-size:300%;
+right:55%;
+top:80%;
+}
+/* Checkbox */
+input.c1{
+
+  height: 50px;
+  width: 50px;
+
+}
+/* green button */
+
+button.b1 {
+  font-size:200%;
+  position: absolute;
+  top:60%;
+  right:40%;
+  background: #4E7147;
+  border-radius: 10px;
+  color: white;
+  padding: 2.85% 5%;
+  margin: 16% 1%;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button.b1:hover {
+  opacity: 0.8;
+}
+
+/* img*/
+
+.imgcontainer {
+  position:sticky;
+  text-align: center;
+  top:10%;
+  padding-bottom:20%;
+}
+
+.imgcontainer2 {
+  position:sticky;
+  text-align: center;
+  top:10%;
+  padding-bottom:20%;}
+/* img*/
+img.avatar {
+   position: absolute;
+   top:75%;
+   right:32%;
+   width: 40%;
+   height: 160%;
+   overflow: hidden;
+   border-radius: 50%;
+}
+img.avatar1 {
+   position: absolute;
+   top:75%;
+   right:32%;
+   width: 40%;
+   height: 160%;
+   overflow: hidden;
+   border-radius: 50%;
+}
+
+
+/* שכחת ססמא*/
+span.log {
+  position: fixed;
+  font-size:280%;
+  float: right;
+  top:35%;
+  right:30%;
+}
+form.log{
+ position: absolute;
+  top:40%;
+}
+
+/* font size of text*/
+b{
+font-size:300%;
+
+}
+
+b.g1{
+position:absolute;
+top:5%;
+right:38%;
+font-size:300%;
+
+}
+b.g5{
+font-size:300%;
+position:absolute;
+top:6%;
+right:27%;
+left:27%;
+
+}
+
+
+
+/* green button sign up*/
+
+button.b2{
+  font-size:200%;
+  position: absolute;
+  background-color: #979797;
+  border-radius: 10px;
+  padding: 2.85% 5%;
+  margin: 0% -5%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  right:37%;
+  top: 100%;
+}
+
+/* Terms & Privacy*/
+
+span.tp {
+
+  font-size:300%;
+  float: right;
+  padding-top: 20%;
+}
+
+div.act
+ {
+  background-color: #EAFFD3;
+  right:0;
+  width: 100%;
+  position:absolute;
+  top:40%;
+}
+div.set
+ {
+  background-color: #EAFFD3;
+  right:0;
+  width: 100%;
+  position:absolute;
+  top:60%;
+}
+
+
+h1.hi{
+position:absolute;
+top:31.5%;
+right:37%;
+font-size: 400%;
+
+
+
+}

@@ -1,0 +1,56 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+<div class="circle"></div>
+
+<b class="g1">אזור אישי</b>
+    <h1 class="hi">היי {{data}}</h1>
+
+<div class="act">
+    <h1>פעילויות</h1>
+</div>
+  <div class="imgcontainer2">
+    <img src={{pic}} alt="Avatar" class="avatar1">
+  </div>
+
+<a href="{{url_for('login')}}">
+<button class="my_activities">הפעילויות שלי</button>
+</a>
+
+<a href="{{url_for('contact')}}">
+<button class="liked_activities">פעילויות שאהבתי</button>
+</a>
+
+<div class="set">
+    <h1>הגדרות</h1>
+</div>
+
+<button class="notification">התראות</button>
+
+<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+<a href="{{url_for('contact')}}">
+<button class="contactB">צרו קשר</button>
+</a>
+
+<a href="{{url_for('login')}}">
+<button class="loginB">התנתקות</button>
+</a>
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}" class="active"> <img class="nav" src="static\images\profile1_green.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" > <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}

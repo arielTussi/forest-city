@@ -1,0 +1,188 @@
+{% extends "base.html"  %}
+
+{% block head%}
+
+{% endblock %}
+
+
+{% block body%}
+<!--the top nav bar-->
+<div class="container">
+    <div class="topnav">
+        <a href="{{ url_for('list_page') }}" class="active"> רשימה</a>
+        <a href="{{ url_for('index') }}">מפה</a>
+    </div>
+</div>
+
+<p style="color:white;">0</p>
+<p style="color:white;">0</p>
+
+
+<!--the search-->
+<form class="search">
+    <input placeholder="Search..." id="search" onkeyup="myFunction()" style="border-radius: 25px;">
+    <button id="submit" onkeyup="myFunction()"></button>
+</form>
+
+
+<!--the transparent navbar that swipe-->
+<section class="swipey-bar-wrapper">
+    <div class="swipey-bar-container">
+        <div class="swipey-box">
+            <a onclick='search_in_list("גינה קהילתית")'>
+                גינה קהילתית
+                <img class="tag" src="static\images\tree.png">
+            </a><!-- /.swipey-box -->
+        </div>
+        <a class="swipey-box" onclick='search_in_list("גינה שיקומית")'>
+            גינה שיקומית
+            <img class="tag" src="static\images\heart.png">
+        </a><!-- /.swipey-box -->
+        <a class="swipey-box" onclick='search_in_list("יער מאכל")'>
+            יער מאכל
+            <img class="tag" src="static\images\strawberry.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("קבוצות וואטסאפ")'>
+            קבוצות וואטסאפ
+            <img class="tag" src="static\images\whatsapp.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("החלפת זרעים ויחוריים")'>
+            החלפת זרעים ויחוריים
+            <img class="tag" src="static\images\flower.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("התנדבות")'>
+            התנדבות
+            <img class="tag" src="static\images\volunteer.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("נטיעות")'>
+            נטיעות
+            <img class="tag" src="static\images\to_plant.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("חוג בית")'>
+            חוג בית
+            <img class="tag" src="static\images\to_plant.png">
+        </a><!-- /.swipey-box -->
+        <a class="swipey-box" onclick='search_in_list("סיורים והדרכות")'>
+            סיורים והדרכות
+            <img class="tag" src="static\images\home.png">
+        </a><!-- /.swipey-box -->
+
+        <a class="swipey-box" onclick='search_in_list("קורסים")'>
+            קורסים
+            <img class="tag" src="static\images\tours.png">
+        </a><!-- /.swipey-box -->
+
+    </div><!-- /.swipey-bar-container -->
+</section><!-- /.swipey-bar-wrapper -->
+
+
+<table id="myTable">
+    {% for i in data%}
+    <tr>
+        <td>
+            <a href="{{ url_for('volunteering', title= i[0],des= i[1],my_loc= i[2] ,pic= i[3],date=i[5],time=i[6],limit=i[7],tag=i[8],user_data=i[9]  ) }}"><img
+                    src={{i[3]}} width="300px" height="250px"></a></td>
+        <!--		 *exe my_loc= the loc of the volunteering button that was pressed->> sent to server -->
+
+        <td>
+            <a href="{{ url_for('volunteering', title= i[0],des= i[1],my_loc= i[2] ,pic= i[3],date=i[5],time=i[6],limit=i[7],tag=i[8],user_data=i[9]  ) }}"><span
+        class="title">{{i[0]}}</span> <span class="loc">{{i[2]}}</span> <span class="date">{{i[5]}}</span>
+                <span class="time">{{i[6]}}</span> <span class="tag"><img class="tag" src={{i[10]}}>{{i[8]}}</span></a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+<!--search in list-->
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+function search_in_list(tag) {
+  //  variables
+  var  filter, table, tr, td, i, txtValue;
+  filter = tag;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+
+</script>
+
+
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}"> <img class="nav" src="static\images\profile1.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav"
+                                           src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}" class="active"> <img class="nav"
+                                                          src="static\images\activity_green.png">פעילויות</a>
+</div>
+
+{% endblock %}

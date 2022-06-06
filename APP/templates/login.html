@@ -1,0 +1,41 @@
+{% extends "base.html"  %}
+
+{% block head%}
+{% endblock %}
+
+
+{% block body%}
+<div class="circle"></div>
+<p id="par" style="color:white;">{{ data }}</p>
+<script>
+var input=document.getElementById("par").innerText;
+if (input=="המשתמש לא נמצא במערכת")
+{
+alert(document.getElementById("par").innerText)
+document.getElementById("par").innerText=""
+}
+</script>
+<b class="g5">התחברות לאזור האישי </b>
+<div class="imgcontainer">
+    <img src={{pic}} alt="Avatar" class="avatar">
+</div>
+
+<span class="log">אין עדיין חשבון <a style="color:green;" href="{{ url_for('sign_up') }}">  הירשמו!</a></span>
+
+<form class="log" action="{{ url_for('login') }}" method="post">
+
+    <input type="text" placeholder="הכנס שם משתמש" style="top:50px;" id="username" name="username" required>
+
+    <input type="password" placeholder="הכנס ססמא" style="top:50px;" id="psw" name="psw" required>
+
+    <button class="b1" type="submit">התחברות</button>
+</form>
+<!--the bottom nav bar-->
+<div class="navbar">
+    <a href="{{ url_for('user_place') }}" class="active"> <img class="nav" src="static\images\profile1_green.png">אזור אישי</a>
+    <a href="{{ url_for('blog') }}"> <img class="nav" src="static\images\video.png">וכתבת</a>
+    <a href="{{ url_for('amuta') }}"> <img style="width:10%; height:60%; margin-right:0%;" class="nav" src="static\images\venatata.png">העמותה</a>
+    <a href="{{ url_for('add') }}"> <img class="nav" src="static\images\add.png">הוספה</a>
+    <a href="{{ url_for('index') }}"> <img class="nav" src="static\images\activity.png">פעילויות</a>
+</div>
+{% endblock %}
